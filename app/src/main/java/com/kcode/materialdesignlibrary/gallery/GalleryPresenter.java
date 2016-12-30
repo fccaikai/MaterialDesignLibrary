@@ -6,12 +6,18 @@ package com.kcode.materialdesignlibrary.gallery;
 
 public class GalleryPresenter implements GalleryContract.Presenter {
 
+    private final GalleryContract.View mGalleryView;
+
     public GalleryPresenter(GalleryContract.View view) {
-        view.setPresenter(this);
+        mGalleryView = view;
+        mGalleryView.setPresenter(this);
     }
 
     @Override
     public void loadTask() {
+        mGalleryView.showLoading();
+
+
 
     }
 

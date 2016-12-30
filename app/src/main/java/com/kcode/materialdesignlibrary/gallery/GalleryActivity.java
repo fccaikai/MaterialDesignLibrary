@@ -15,8 +15,10 @@ public class GalleryActivity extends BaseActivity {
 
         initToolBar("Gallery");
 
+        GalleryFragment fragment = GalleryFragment.newInstance();
         ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),
-                GalleryFragment.newInstance(),R.id.container);
+                fragment,R.id.container);
 
+        new GalleryPresenter(fragment);
     }
 }
